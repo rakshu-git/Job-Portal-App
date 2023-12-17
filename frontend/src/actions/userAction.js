@@ -1,6 +1,8 @@
 import axios from "axios"
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { startGetEmployerProfile } from "./employerAction"
+import { startGetSeeker } from "./seekerAction"
 export const SET_USER = "SET_USER"
 export const SET_ALLUSER = "SET_ALLUSER"
 export const SET_REMOVE = "SET_REMOVE"
@@ -83,6 +85,8 @@ export const startLoginUser = (formData,navigation) =>{
                     localStorage.setItem('token',response.data.token)   
                     toast.success('Login successfull!')
                     dispatch(startGetAccount())
+                    dispatch(startGetEmployerProfile())
+                    dispatch(startGetSeeker());
                     navigation()
                 }else{
                     toast.error("Invalid email ")

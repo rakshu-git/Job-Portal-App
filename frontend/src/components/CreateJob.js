@@ -125,7 +125,7 @@ function CreateJob(props) {
             <div className="mb-3">
               <label className="form-label">Salary</label>
               <input
-                type="number"
+                type="text"
                 className={`form-control ${
                   formErrors.salary ? "is-invalid" : ""
                 }`}
@@ -142,7 +142,7 @@ function CreateJob(props) {
             <div className="mb-3">
               <label className="form-label">Required Experience</label>
               <input
-                type="number"
+                type="text"
                 className={`form-control ${
                   formErrors.requiredExperience ? "is-invalid" : ""
                 }`}

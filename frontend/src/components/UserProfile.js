@@ -132,7 +132,7 @@ function UserProfile(props) {
                 Mobile
               </label>
               <input
-                type="number"
+                type="text"
                 className={`form-control ${formErrors?.mobile && "is-invalid"}`}
                 id="mobile"
                 value={mobile}
@@ -172,7 +172,7 @@ function UserProfile(props) {
                 Experience
               </label>
               <input
-                type="number"
+                type="text"
                 className={`form-control ${
                   formErrors?.experience && "is-invalid"
                 }`}

@@ -20,7 +20,7 @@ const seekerProfileSchema = new Schema({
     type:String
   },
   experience:{
-    type:Number
+    type:String
   },
   designation:{
     type:String

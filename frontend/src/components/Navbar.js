@@ -19,16 +19,19 @@ function Navbar() {
   const value = useSelector((state) => {
     return state.employer.data;
   });
+  console.log('chanda',value)
  
 
   const value1 = useSelector((state) => {
     return state.seeker.data;
   });
+  console.log('munda',value1)
  
 
   const user = useSelector((state) => {
     return state.user?.data;
   })
+
   
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -76,7 +79,7 @@ function Navbar() {
               )) ||
                 (user.role === "jobseeker" && (
                   <>
-                    {Object.keys(value1).length <= 0 && (
+                    {Object.keys(value1).length == 0 && (
                       <li className="nav-item">
                         <Link className="nav-link" to="/user-profile">
                           Create Profile
@@ -108,7 +111,7 @@ function Navbar() {
                 )) ||
                 (user.role === "employer" && (
                   <>
-                    {Object.keys(value).length <= 0 && (
+                    {Object.keys(value).length == 0 && (
                       <li className="nav-item">
                         <Link className="nav-link" to="/employers-profile">
                           Create Profile

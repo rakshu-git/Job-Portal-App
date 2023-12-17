@@ -8,13 +8,15 @@ import {
 
 function JobOpenings() {
   const [search, setSearch] = useState("");
-  const searchInputRef = useRef(null)
+  const searchInputRef = useRef()
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(startGetAllJobPosts());
-    searchInputRef.current.focus()
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
   }, []);
 
   const value = useSelector((state) => {
@@ -52,8 +54,8 @@ function JobOpenings() {
 
   return (
     <div className="container mt-4">
-      {Object.keys(value).length > 0 ? (
-        <div>
+    
+        
           <div className="mb-3">
             <input
               type="text"
@@ -64,7 +66,9 @@ function JobOpenings() {
               ref={searchInputRef}
             />
           </div>
+          {Object.keys(value).length > 0 ? (
           <div className="row">
+         
             {value.map((ele, index) => (
               <div key={index} className="col-md-4 mb-4">
                 <div className="card">
@@ -124,7 +128,7 @@ function JobOpenings() {
               </div>
             ))}
           </div>
-        </div>
+        
       ) : (
         <h1>Jobs Not Found</h1>
       )}
